@@ -1,27 +1,35 @@
 package exercise4;
 
+import java.util.Scanner;
+
 public class OracleConnectionsBuilder implements ConnectionsBuilder{
 
+	private Scanner sc = new Scanner(System.in);
 	private DbConnections dbConnection;
 	
 	public OracleConnectionsBuilder(){
 		dbConnection = new DbConnections();
 	}
 
-	
 	@Override
 	public void buildUrl() {
-		dbConnection.setUrl("https:\\localhost");
+		System.out.println("Enter the url of the database: ");
+		String urlAddress = sc.nextLine();
+		dbConnection.setUrl(urlAddress);
 	}
 
 	@Override
 	public void buildUser() {
-		dbConnection.setUser("Nico");
+		System.out.println("Enter the user name: ");
+		String userName = sc.nextLine();
+		dbConnection.setUser(userName);
 	}
 
 	@Override
 	public void buildPassword() {
-		dbConnection.setPassword("qwe");
+		System.out.println("Enter the password: ");
+		String userPassword = sc.nextLine();
+		dbConnection.setPassword(userPassword);
 	}
 
 	@Override

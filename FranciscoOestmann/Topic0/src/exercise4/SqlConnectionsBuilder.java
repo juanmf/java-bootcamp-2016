@@ -1,7 +1,11 @@
 package exercise4;
 
+import java.util.Scanner;
+
 public class SqlConnectionsBuilder implements ConnectionsBuilder{
 
+	private Scanner sc = new Scanner(System.in);
+	
 	private DbConnections dbConnection;
 	
 	public SqlConnectionsBuilder(){
@@ -10,17 +14,23 @@ public class SqlConnectionsBuilder implements ConnectionsBuilder{
 
 	@Override
 	public void buildUrl() {
-		dbConnection.setUrl("https:\\localhost");
+		System.out.println("Enter the url of the database: ");
+		String urlAddress = sc.nextLine();
+		dbConnection.setUrl(urlAddress);
 	}
 
 	@Override
 	public void buildUser() {
-		dbConnection.setUser("Frann");
+		System.out.println("Enter the user name: ");
+		String userName = sc.nextLine();
+		dbConnection.setUser(userName);
 	}
 
 	@Override
 	public void buildPassword() {
-		dbConnection.setPassword("asd");
+		System.out.println("Enter the password: ");
+		String userPassword = sc.nextLine();
+		dbConnection.setPassword(userPassword);
 	}
 
 	@Override
