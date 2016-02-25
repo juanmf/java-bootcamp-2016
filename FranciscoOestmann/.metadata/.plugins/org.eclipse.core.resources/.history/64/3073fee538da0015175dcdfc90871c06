@@ -1,0 +1,38 @@
+import java.sql.*;
+
+public class SingletonDBConnection {
+
+	private static String dbUrl = " ";
+	static SingletonDBConnection dbCon = null;
+	static Connection conn = null;
+	
+	//Private Constructor so the user can't call the default Constructor
+	private SingletonDBConnection(){
+	
+	}
+
+	//Method to get the instance of the Class
+	public static SingletonDBConnection getInstance(){
+		//Implement Lazy Instantiation to ensure that the instance it's created only when needed
+		if(dbCon==null){
+			dbCon = new SingletonDBConnection();
+		}
+		//Print in the console to test the instance
+		System.out.println("Test.");
+		//Return the instance
+		return dbCon;
+	}
+	
+	public static void getConnection(String url){
+		try {
+			Connection conn = DriverManager.getConnection(url);
+			System.out.println("Connected");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+}

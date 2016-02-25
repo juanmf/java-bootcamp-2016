@@ -1,0 +1,28 @@
+package exercise4;
+
+public class SqlConnection implements UrlBuilder {
+
+	private GenericDB urlAddress;
+	
+	@Override
+	public void buildUrl() {
+		urlAddress.setUrl("https:\\");
+		
+	}
+
+	@Override
+	public void buildUser() {
+		urlAddress.setUser("Frann");
+	}
+
+	@Override
+	public void buildPasword() {
+		urlAddress.setPassword("asdasd");
+		
+	}
+	
+	public GenericDB getUrl(){
+		return urlAddress;
+	}
+
+}

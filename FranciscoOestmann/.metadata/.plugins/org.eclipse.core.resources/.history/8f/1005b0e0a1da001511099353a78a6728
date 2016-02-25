@@ -1,0 +1,39 @@
+package exercise2;
+
+public class LocalConnection extends AbstractConnectionFactory{
+
+	@Override
+	ConnectionType1 getConnection1(String connection) {
+		if(connection == null){
+			return null;
+		}
+		
+		if(connection.equals("1")){
+			return new Connection1();
+		}
+		else{
+			if(connection.equals("2")){
+				return new Connection2();
+			}
+		}
+		return null;
+	}
+
+	@Override
+	ConnectionType2 getConnection2(String connection) {
+		if(connection == null){
+			return null;
+		}
+		
+		if(connection.equals("3")){
+			return new Connection3();
+		}
+		else{
+			if(connection.equals("4")){
+				return new Connection4();
+			}
+		}
+		return null;
+	}
+	
+}

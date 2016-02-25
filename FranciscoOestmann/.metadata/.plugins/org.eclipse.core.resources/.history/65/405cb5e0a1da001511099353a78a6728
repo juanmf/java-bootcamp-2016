@@ -1,0 +1,17 @@
+package exercise2;
+
+public class RemoteConnection extends AbstractConnectionFactory {
+
+	@Override
+	ConnectionType1 getLocalConnection1(String connection) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	ConnectionType2 getRemoteConnection2(String connection) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

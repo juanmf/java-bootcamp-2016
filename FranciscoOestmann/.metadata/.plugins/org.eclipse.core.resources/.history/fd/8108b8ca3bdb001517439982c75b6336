@@ -1,0 +1,13 @@
+package exercise4;
+
+public class BuilderTest {
+
+	public static void main(String[] args) {
+		
+		UrlBuilder connBuilder = new SqlConnection();
+		BuildDirector buildDirector = new BuildDirector(connBuilder);
+		buildDirector.buildUrl();
+		GenericDB db = buildDirector.getUrl();
+		System.out.println(db);
+	}
+}

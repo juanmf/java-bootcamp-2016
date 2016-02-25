@@ -1,0 +1,28 @@
+package exercise2;
+
+public class RemoteConnectionFactory extends AbstractConnectionFactory{
+
+	@Override
+	LocalConnection getLocalConnection(String localConnection) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	RemoteConnection getRemoteConnection(String remoteConnection) {
+		if(remoteConnection==null){
+			return null;
+		}
+		
+		if(remoteConnection.equalsIgnoreCase("remotelan")){
+			return new RemoteLanConnection();
+		}
+		else{
+			if(remoteConnection.equalsIgnoreCase("remotewifi")){
+				return new RemoteWifiConnection(); 
+			}
+		}
+		return null;
+	}
+	
+}

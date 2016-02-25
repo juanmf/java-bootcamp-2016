@@ -1,0 +1,6 @@
+package exercise2;
+
+public abstract class AbstractConnectionFactory {
+	abstract ConnectionType1 getConnection1(String connection);
+	abstract ConnectionType2 getConnection2(String connection);
+}

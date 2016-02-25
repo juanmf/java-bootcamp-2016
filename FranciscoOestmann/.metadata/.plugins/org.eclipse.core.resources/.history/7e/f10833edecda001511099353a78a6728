@@ -1,0 +1,10 @@
+package exercise2;
+
+public class RemoteWifiConnection implements RemoteConnection{
+
+	@Override
+	public void connect() {
+		System.out.println("Remote WIFI connection established.");
+	}
+
+}

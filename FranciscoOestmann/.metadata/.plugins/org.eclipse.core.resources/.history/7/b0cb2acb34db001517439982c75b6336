@@ -1,0 +1,11 @@
+package exercise4;
+
+public class SqlConnection implements UrlBuilder {
+
+	@Override
+	public void buildUrl() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

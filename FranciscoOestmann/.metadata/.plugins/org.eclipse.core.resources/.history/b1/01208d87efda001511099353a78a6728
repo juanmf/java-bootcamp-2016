@@ -1,0 +1,10 @@
+package exercise2;
+
+public class WifiSqlConnection implements LocalSqlConnection{
+
+	@Override
+	public void connect() {
+		System.out.println("A WIFI sql connection to the local server it's been established.");
+	}
+
+}

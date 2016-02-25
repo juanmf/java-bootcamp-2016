@@ -1,0 +1,21 @@
+package exercise4;
+
+public class MealDemo {
+
+	public static void main(String[] args) {
+		
+		MealBuilder mealBuilder = new ItalianMealBuilder();
+		MealDirector mealDirector = new MealDirector(mealBuilder);
+		mealDirector.constructMeal();
+		Meal meal = mealDirector.getMeal();
+		System.out.println("Meal is " + meal);
+		
+		MealBuilder mealBuilder = new JapaneseMealBuilder();
+		MealDirector mealDirector = new MealDirector(mealBuilder);
+		mealDirector.constructMeal();
+		Meal meal = mealDirector.getMeal();
+		System.out.println("Meal is " + meal);
+	}
+	
+
+}

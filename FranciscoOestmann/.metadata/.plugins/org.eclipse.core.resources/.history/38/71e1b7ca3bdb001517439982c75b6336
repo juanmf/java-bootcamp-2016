@@ -1,0 +1,20 @@
+package exercise4;
+
+public class BuildDirector {
+
+	private UrlBuilder urlBuilder = null;
+	
+	public BuildDirector(UrlBuilder urlBuilder){
+		this.urlBuilder = urlBuilder;
+	}
+	
+	public void buildUrl(){
+		urlBuilder.buildUrl();
+		urlBuilder.buildUser();
+		urlBuilder.buildPasword();
+	}
+	
+	public GenericDB getUrl(){
+		return urlBuilder.getUrl();
+	}
+}

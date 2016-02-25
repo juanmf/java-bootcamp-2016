@@ -1,0 +1,17 @@
+package exercise4;
+
+public class BuilderTest {
+
+	public static void main(String[] args) {
+		
+		public DbConnections getUrlAddress(){
+		ConnectionsBuilder connectionsBuilder = new SqlConnectionsBuilder();
+		ConnectionsDirector connectionsDirector = new ConnectionsDirector(connectionsBuilder);
+		connectionsDirector.createDbConnection();
+		DbConnections sqlConnection = connectionsDirector.getConnection();
+		System.out.println("Connection info is: " + sqlConnection);
+		return sqlConnection;
+		
+	}
+
+}

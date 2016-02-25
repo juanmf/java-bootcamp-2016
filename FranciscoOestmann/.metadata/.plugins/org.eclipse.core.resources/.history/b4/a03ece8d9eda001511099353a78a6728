@@ -1,0 +1,10 @@
+package exercise2;
+
+public class Connection2 implements Connect {
+
+	@Override
+	public void getConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+}

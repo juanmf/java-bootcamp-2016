@@ -1,0 +1,19 @@
+
+public class SingletonDBConnection {
+
+	static SingletonDBConnection dbCon = new SingletonDBConnection();
+	
+	//Private Constructor so the user can't call the default Constructor
+	private SingletonDBConnection(){
+		
+	}
+	//Method to get the instance of the Class
+	public static SingletonDBConnection getInstance(){
+		//Print in the console to test the instance
+		System.out.println("Test.");
+		//Return the instance
+		return dbCon;
+	}
+	
+	
+}

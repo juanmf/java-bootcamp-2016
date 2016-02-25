@@ -1,0 +1,11 @@
+package exercise2;
+
+public class RemoteLanConnection implements RemoteConnection {
+
+	@Override
+	public void connect() {
+		System.out.println("Remote LAN connection established.");
+		
+	}
+
+}

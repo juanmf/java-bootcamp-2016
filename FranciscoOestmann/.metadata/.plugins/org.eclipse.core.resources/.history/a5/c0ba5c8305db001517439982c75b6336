@@ -1,0 +1,7 @@
+package exercise3;
+
+public interface DAO {
+	
+	void connect();
+	
+}

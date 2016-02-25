@@ -1,0 +1,43 @@
+package exercise4;
+
+public class SqlConnectionsBuilder implements ConnectionsBuilder{
+
+	private DbConnections dbConnection;
+	
+	public SqlConnectionsBuilder(){
+		dbConnection = new DbConnections();
+	}
+
+	@Override
+	public void buildUrl() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void buildUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void buildPassword() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void buildConnectionAddress() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public DbConnections getConnectionAddress() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

@@ -1,0 +1,12 @@
+package exercise4;
+
+public class BuilderTest {
+
+	public static void main(String[] args) {
+		
+		ConnectionsBuilder connectionsBuilder = new SqlConnectionsBuilder();
+		ConnectionsDirector connectionsDirector = new ConnectionsDirector(connectionsBuilder);
+		connectionsDirector.createDbConnection();
+	}
+
+}

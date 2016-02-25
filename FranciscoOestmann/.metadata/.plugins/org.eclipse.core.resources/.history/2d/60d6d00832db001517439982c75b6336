@@ -1,0 +1,6 @@
+package exercise4;
+
+public interface ConnectionBuilder {
+
+	public void getDbAddress();
+}

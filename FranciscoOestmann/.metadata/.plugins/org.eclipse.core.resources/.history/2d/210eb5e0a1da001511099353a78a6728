@@ -1,0 +1,9 @@
+package exercise2;
+
+public class ConnectionProducer {
+	public static AbstractConnectionFactory getConnection(String connection){
+		if(connection.equalsIgnoreCase("connectiontype1")){
+			
+		}	
+	}
+}

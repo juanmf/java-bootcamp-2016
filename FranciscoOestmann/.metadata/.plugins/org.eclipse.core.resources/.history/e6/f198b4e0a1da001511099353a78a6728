@@ -1,0 +1,11 @@
+package exercise2;
+
+public class Connection2 implements ConnectionType1{
+
+	@Override
+	public void getConnection() {
+		System.out.println("Connection to server 2 established");
+		
+	}
+
+}

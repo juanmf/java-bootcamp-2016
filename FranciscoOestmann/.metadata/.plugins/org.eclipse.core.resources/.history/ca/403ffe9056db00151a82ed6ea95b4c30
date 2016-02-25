@@ -1,0 +1,41 @@
+package exercise4;
+
+public class OracleConnectionsBuilder implements ConnectionsBuilder{
+
+	private DbConnections dbConnection;
+	
+	public OracleConnectionsBuilder(){
+		dbConnection = new DbConnections();
+	}
+
+	
+	@Override
+	public void buildUrl() {
+		
+	}
+
+	@Override
+	public void buildUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void buildPassword() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void buildConnectionAddress() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public DbConnections getConnectionAddress() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
