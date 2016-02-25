@@ -1,0 +1,8 @@
+package exercise3;
+
+public interface DbDAO {
+
+	public int getId();
+	public String getName();
+	public String getAll();
+}

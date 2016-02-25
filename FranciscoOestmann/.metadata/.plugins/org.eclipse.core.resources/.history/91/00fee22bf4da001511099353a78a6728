@@ -1,0 +1,12 @@
+package exercise2;
+
+public class ConnectionTypeTest {
+
+	public static void main(String[] args) {
+
+		AbstractConnectionFactory localConn = ConnGenerator.getConnect("local");
+		localConn.getLocalType("lan");
+		localConn.getLocalType("wifi");
+	}
+
+}

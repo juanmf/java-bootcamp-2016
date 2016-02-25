@@ -1,0 +1,6 @@
+package exercise2;
+
+public abstract class AbstractConnectionFactory {
+	abstract LocalConnection getLocalConnection(String localConnection);
+	abstract RemoteConnection getRemoteConnection(String remoteConnection);
+}

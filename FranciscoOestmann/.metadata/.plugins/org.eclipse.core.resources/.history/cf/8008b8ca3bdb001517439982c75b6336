@@ -1,0 +1,9 @@
+package exercise4;
+
+public interface UrlBuilder {
+
+	void buildUrl();
+	void buildUser();
+	void buildPasword();
+	public GenericDB getUrl();
+}

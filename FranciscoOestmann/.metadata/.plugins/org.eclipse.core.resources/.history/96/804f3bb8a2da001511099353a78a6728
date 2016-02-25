@@ -1,0 +1,11 @@
+package exercise2;
+
+public class WifiConnection implements LocalConnection{
+
+	@Override
+	public void connect() {
+		System.out.println("WIFI connection established.");
+		
+	}
+
+}

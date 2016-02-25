@@ -1,0 +1,27 @@
+package exercise2;
+
+public class LocalConnectionFactory extends AbstractConnectionFactory{
+
+	@Override
+	LocalConnection getLocalConnection(String localConnection) {
+		if(localConnection==null){
+			return null;
+		}
+		if(localConnection.equalsIgnoreCase("locallan")){
+			return new LocalLanConnection();
+		}
+		else{
+			if(localConnection.equalsIgnoreCase("localwifi")){
+				return new LocalWifiConnection();
+			}
+		}
+		return null;
+	}
+
+	@Override
+	RemoteConnection getRemoteConnection(String remoteConnection) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

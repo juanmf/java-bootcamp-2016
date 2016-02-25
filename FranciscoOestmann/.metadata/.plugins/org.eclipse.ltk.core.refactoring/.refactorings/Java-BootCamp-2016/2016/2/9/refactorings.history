@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move source folder &apos;src&apos; to &apos;Topic0&apos;&#x0A;- Original project: &apos;Java-BootCamp-2016&apos;&#x0A;- Destination element: &apos;Topic0&apos;&#x0A;- Original element: &apos;Java-BootCamp-2016/src&apos;&#x0A;- Update references to refactored element" description="Move source folder" destination="=Topic0" element1="/src" flags="6" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveRoots" roots="1" stamp="1456365352779" version="1.0"/>
+</session>

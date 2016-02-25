@@ -1,0 +1,33 @@
+package exercise4;
+
+//concrete builder
+public class JapaneseMealBuilder implements MealBuilder{
+
+		private Meal meal;
+		
+		public JapaneseMealBuilder(){
+			meal = new Meal();
+		}
+
+		@Override
+		public void buildDrink() {
+			meal.setDrink("sake");
+		}
+
+		@Override
+		public void buildMainCourse() {
+			meal.setMainCourse("Sushi");
+		}
+
+		@Override
+		public void buildSide() {
+			meal.setSide("Soup");
+		}
+
+		@Override
+		public Meal getMeal() {
+			return meal;
+		}
+		
+		
+}

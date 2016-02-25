@@ -1,0 +1,13 @@
+package exercise2;
+
+public class ConnectionTypeTest {
+
+	public static void main(String[] args) {
+
+		AbstractConnectionFactory localConn = ConnGenerator.getConnect("local");
+		LocalSqlConnection conn1 = localConn.getLocalType("local");
+		conn1.connect();
+		
+	}
+
+}

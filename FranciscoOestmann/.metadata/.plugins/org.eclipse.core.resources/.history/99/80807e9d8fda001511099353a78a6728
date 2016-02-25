@@ -1,0 +1,36 @@
+import java.sql.*;
+
+public class SingletonDBConnection {
+	
+	//
+	static SingletonDBConnection sDBConn = null;
+	
+	//private constructor so  the Class can't be instantiated from outside classes
+	private SingletonDBConnection(){
+		
+	}
+	
+	//public method to instantiation of the class
+	public static SingletonDBConnection getInstance(){
+		if(sDBConn==null){
+			sDBConn = new SingletonDBConnection(); 
+		}
+		return sDBConn;
+	}
+	
+	//method to set a connection to a database
+	public Connection getConnection(String url){
+		try {
+			Connection conn = DriverManager.getConnection(url);
+			//prints a message in the console if the connection was established
+			System.out.println("Connected: " + conn.getClass());
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+}

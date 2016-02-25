@@ -1,0 +1,16 @@
+package exercise2;
+
+public class ConnectionGenerator {
+	public static AbstractConnectionFactory getConnection(String connectionType){
+		
+		if(connectionType.equalsIgnoreCase("local")){
+			return new LocalConnectionFactory();
+		}
+		else{
+			if(connectionType.equalsIgnoreCase("remote")){
+				return new RemoteConnectionFactory();
+			}
+		}
+		return null;
+	}
+}

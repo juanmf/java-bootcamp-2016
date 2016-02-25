@@ -1,0 +1,12 @@
+package exercise2;
+
+public class LocalLanConnection implements LocalConnection{
+
+	@Override
+	public void connect() {
+		System.out.println("LAN connection established.");
+			
+		}
+}
+
+
