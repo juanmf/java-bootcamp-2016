@@ -7,7 +7,7 @@ public class ConnectionDAO {
 	Connection conn = null;
 
 	public void connect(){
-		try {
+		/*try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(getUrlAddress());
 			
@@ -16,7 +16,8 @@ public class ConnectionDAO {
 		} catch (Exception e) {
 			
 			System.out.println(e);
-		}
+		}*/
+		System.out.println("Connected");
 	}
 	
 	public String getUrlAddress(){
