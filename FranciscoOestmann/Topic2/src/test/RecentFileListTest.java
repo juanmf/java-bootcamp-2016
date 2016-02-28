@@ -2,13 +2,29 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
+
+import main.RecentFileList;
 
 public class RecentFileListTest {
 
+	RecentFileList obj = new RecentFileList();
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void checkNotNull(){
+		assertNotNull(obj);
 	}
-
+	
+	@Test
+	public void checkCreatedArrayList(){
+		
+		//Checks if the ArrayList was instantiated
+		assertNotNull(obj.createList());
+		
+		//Checks if the ArrayList is empty
+		assert obj.createList().isEmpty();
+	}
+	
 }
