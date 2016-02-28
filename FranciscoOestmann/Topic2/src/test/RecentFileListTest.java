@@ -13,7 +13,7 @@ public class RecentFileListTest {
 	RecentFileList obj = new RecentFileList();
 	
 	@Test
-	public void checkNotNull(){
+	public void checkClassObjectNotNull(){
 		assertNotNull(obj);
 	}
 	
@@ -25,6 +25,12 @@ public class RecentFileListTest {
 		
 		//Checks if the ArrayList is empty
 		assert obj.createList().isEmpty();
+	}
+	
+	@Test
+	public void checkIfFileWasOpened(){
+		assertNotNull(obj.openFile());
+		
 	}
 	
 }
