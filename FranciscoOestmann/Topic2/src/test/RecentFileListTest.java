@@ -1,48 +1,40 @@
 package test;
 
 import static org.junit.Assert.*;
-
 import java.io.File;
-//import java.util.ArrayList;
-
 import org.junit.Test;
 
 import main.RecentFileList;
 
 public class RecentFileListTest {
 
-	RecentFileList obj = new RecentFileList();
-	//ArrayList<Object> list = new ArrayList<Object>();
-	File file = new File("test.txt");
+	private RecentFileList newList = new RecentFileList();
+	File file1 = new File("");
+	File file2 = new File("//home//Test.txt");
 	
 	@Test
-	public void checkClassObjectNotNull(){
-		assertNotNull(obj);
+	//Checks if list is empty
+	public void testEmptyList() {
+		assertTrue(newList.getList().isEmpty());
+	}
+
+	@Test
+	//Checks if the file was added and if the file is not duplicated
+	public void testIfFileWassAddedOnOpening(){
+		newList.addFile(file1);
+		newList.addFile(file2);
+		newList.addFile(file1);
+		assertTrue(newList.getList().contains(file1));
 	}
 	
 	@Test
-	public void checkCreatedArrayListNotNull(){
-		
-		//Checks if the ArrayList was instantiated
-		//assertNotNull(obj.createList());
-		
+	//Checks if the list has less than 16 elements
+	public void checkIfListSizeIsLargerThan15(){
+		File fileTest;
+		for(int i=0; i<15; i++){
+			fileTest = new File("//home " + i);
+			newList.addFile(fileTest);
+		}
+		assertEquals(15, newList.getList().size());
 	}
-	
-	@Test
-	public void checkIfListIsEmpty(){
-		//Checks if the ArrayList is empty
-		//assertTrue(obj.createList().isEmpty());
-	}
-	
-	@Test
-	public void checkIfFileWasOpened(){
-		assertNotNull(obj.openFile());
-	}
-	
-	@Test
-	public void checkIfFileWasAddedToList(){
-		assertTrue(obj.createList().contains(obj.openFile()));
-	}		
-	
-	
 }
