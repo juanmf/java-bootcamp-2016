@@ -1,40 +1,42 @@
 package test;
 
 import static org.junit.Assert.*;
+
 import java.io.File;
+
 import org.junit.Test;
 
 import main.RecentFileList;
 
 public class RecentFileListTest {
 
-	private RecentFileList newList = new RecentFileList();
-	File file1 = new File("");
-	File file2 = new File("//home//Test.txt");
+	RecentFileList list = new RecentFileList();
+	File file = new File("frann/home/test1");
+	File file2 = new File("frann/home//test2");
 	
 	@Test
-	//Checks if list is empty
-	public void testEmptyList() {
-		assertTrue(newList.getList().isEmpty());
+	//checks if the list it's empty
+	public void testIfListIsEmpty() {
+		assertTrue(list.isEmpty());
 	}
-
+	
 	@Test
-	//Checks if the file was added and if the file is not duplicated
-	public void testIfFileWassAddedOnOpening(){
-		newList.addFile(file1);
-		newList.addFile(file2);
-		newList.addFile(file1);
-		assertTrue(newList.getList().contains(file1));
+	//Checks if the file was added and it's not duplicated
+	public void testIFFileWasAddedToListAndisNotDuplicated(){
+		list.addFileToList(file);
+		list.addFileToList(file2);
+		list.addFileToList(file);
+		assertTrue(list.contains(file));
 	}
 	
 	@Test
 	//Checks if the list has less than 16 elements
 	public void checkIfListSizeIsLargerThan15(){
-		File fileTest;
+		
 		for(int i=0; i<15; i++){
-			fileTest = new File("//home " + i);
-			newList.addFile(fileTest);
+			list.addFileToList(new File("frann/home/ " + i));
 		}
-		assertEquals(15, newList.getList().size());
+		
+		assertEquals(15, list.size());
 	}
 }
