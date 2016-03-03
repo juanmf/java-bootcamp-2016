@@ -35,10 +35,15 @@ public class BlogEntry {
     public void setText(String text) {
         this.text = text;
     }
+
     @Override
     public boolean equals(Object o) {
-        return o!=null && o instanceof BlogEntry && tittle.equalsIgnoreCase(((BlogEntry)o).getTittle());
+        return o != null && o instanceof BlogEntry && tittle.equalsIgnoreCase(((BlogEntry) o).getTittle());
 
     }
 
+    @Override
+    public int hashCode() {
+        return tittle != null ? tittle.hashCode() : 0;
+    }
 }
