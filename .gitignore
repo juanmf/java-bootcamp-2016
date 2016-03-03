@@ -9,7 +9,7 @@
 
 
 .metadata
-idea/
+.idea/
 bin/
 tmp/
 *.tmp
