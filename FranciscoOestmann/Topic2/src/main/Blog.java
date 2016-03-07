@@ -6,23 +6,23 @@ import java.util.List;
 
 public class Blog {
 	
-	List<MockBlog> postList;
+	List<BlogEntry> postList;
 	int cont = 0;
 
 	public Blog(){
-		postList = new ArrayList<MockBlog>();
+		postList = new ArrayList<BlogEntry>();
 	}
 
 	public boolean isEmpty() {
 		return postList.isEmpty();
 	}
 
-	public void addPost(MockBlog mb) {
+	public void addPost(BlogEntry mb) {
 		cont++;
 		postList.add(mb);
 	}
 
-	public void deletePost(MockBlog mb) {
+	public void deletePost(BlogEntry mb) {
 		postList.remove(mb);
 		
 	}

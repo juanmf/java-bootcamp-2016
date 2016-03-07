@@ -2,6 +2,7 @@ package main;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class RecentFileList {
@@ -9,6 +10,7 @@ public class RecentFileList {
 	List<File> fileList;
 	
 	public RecentFileList(){
+		
 		fileList = new ArrayList<File>();
 	}
 	
@@ -30,13 +32,25 @@ public class RecentFileList {
 		return fileList;
 	}
 	
-	public void removeLast(List<File> myList){
-		if(fileList.size()>15){
-			fileList.remove(fileList.size());
+	public void removeLast(){
+		while(fileList.size()>15){
+			fileList.remove(fileList.size()-1);
 		}
 	}
 
+	public boolean checkDuplicates() {
+		for(Iterator<File> it = fileList.iterator(); it.hasNext();){
+			if(it.equals(it.next())){
+				return true;
+			}
+		}
+			
+		return false;
+	}
+	
 	public int size() {
 		return fileList.size();
 	}
+
+	
 }

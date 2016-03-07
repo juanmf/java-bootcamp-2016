@@ -1,38 +1,55 @@
 
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import main.Blog;
-import main.MockBlog;
+import main.BlogEntry;
 
 public class BlogTest {
 	
-	Blog newPost = new Blog();
-	MockBlog mb = new MockBlog("Frannz", "TDD", "It's HAAARDDDD!!!!!"); 
+	Blog tddForBeginners;
+	BlogEntry be;
 
+	@Before
+	public void setup(){
+		tddForBeginners = new Blog();
+		be = new BlogEntry("Frannz", "TDD", "It's HAAARDDDD!!!!!");
+	}
+	
 	@Test
 	public void testIFPostGetsAddedToList() {
-		newPost.addPost(mb);
-		assertFalse(newPost.isEmpty());
+		tddForBeginners.addPost(be);
+		assertFalse(tddForBeginners.isEmpty());
 	}
 	
 	@Test
 	public void testIFPostGetsRemovedFromList(){
-		newPost.deletePost(mb);
-		assertTrue(newPost.isEmpty());
+		tddForBeginners.addPost(be);
+		tddForBeginners.deletePost(be);
+		assertTrue(tddForBeginners.isEmpty());
 	}
 	
 	@Test
 	public void testShowTenLastPost(){
 		for(int i = 0; i<15; i++){
-			newPost.addPost(new MockBlog("Frannz", "TDD", "It's HAAARDDDD!!!!!" + i));
+			tddForBeginners.addPost(new BlogEntry("Frannz", "TDD", "It's HAAARDDDD!!!!!" + i));
 		}
 		
-		assertEquals(10, newPost.printLastPosts());
+		assertEquals(10, tddForBeginners.printLastPosts());
 		
+	}
+	
+	@After
+	public void teardown(){
+		tddForBeginners = null;
+		be = null;
 	}
 
 }
