@@ -8,6 +8,9 @@ public class MySqlDAO {
 	Connection conn = null;
 	PreparedStatement st = null;
 	ResultSet rs = null;
+	private String teacher = "";
+	private String day = " ";
+	
 	String temp = " ";
 	
 		
@@ -48,25 +51,29 @@ public class MySqlDAO {
 				System.out.println("Executing Query");
 				System.out.println();
 				
+				
 				while(rs.next()){
 					if(rs.isFirst()){
-						System.out.println("Teacher: " +rs.getString("Teacher.LastName") + ", " + rs.getString("Teacher.FirstName") );
-						System.out.println("Schedule: ");
-						temp = rs.getString("Teacher.LastName");
-					}
-									
-									
-					if(temp.equals(rs.getString("Teacher.LastName"))){
-						System.out.println("	" + rs.getString("DaysInWeek.Day") + " " + rs.getString("ClassPerWeek.Hour") + ": " +  rs.getString("Course.CourseName"));
+						teacher = rs.getString("Teacher.LastName")  + ", "+ rs.getString("Teacher.FirstName");
+						day = rs.getString("DaysInWeek.Day") + " " + rs.getString("ClassPerWeek.Hour") + " " + rs.getString("Course.CourseName");
+						System.out.println("Teacher: " + teacher);
+						System.out.println("Schedule:");
+						System.out.println("      " + day);
+						System.out.println();
+						
 					}
 					else{
-						
-						System.out.println("Teacher: " + rs.getString("Teacher.LastName") + ", " + rs.getString("Teacher.FirstName") );
-						System.out.println("Schedule: ");
-						System.out.println("	" + rs.getString("DaysInWeek.Day") + " " + rs.getString("ClassPerWeek.Hour") + ": " +  rs.getString("Course.CourseName"));
-						temp = rs.getString("Teacher.LastName");
+						teacher = rs.getString("Teacher.LastName")  + ", "+ rs.getString("Teacher.FirstName");
+						day = rs.getString("DaysInWeek.Day") + " " + rs.getString("ClassPerWeek.Hour") + " " + rs.getString("Course.CourseName");
+						System.out.println("Teacher: " + teacher);
+						System.out.println("Schedule:");
+						System.out.println("      " + day);
+						System.out.println();
+						rs.next();
+		
 					}
 				}
+				
 				
 			} catch (SQLException e) {
 				
