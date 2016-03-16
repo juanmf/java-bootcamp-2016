@@ -2,7 +2,6 @@ package com.bootcamp.Topic6.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,9 +20,8 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Configuration
 @RequestMapping("/cart")
-@ComponentScan("com.bootcamp.Topic6.service")
+@ComponentScan("com.bootcamp.Topic6")
 @Api(value = "Cart", description = "All operations related to a cart")
 public class CartController {
     
@@ -41,7 +39,7 @@ public class CartController {
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "username", value = "User's name", required = false, dataType = "string", paramType = "query", defaultValue = "") })
 	@RequestMapping(method = RequestMethod.GET)
-	public Cart showCart(@RequestParam(value = "username", required = false, defaultValue = "") String username) {
+	public Cart showCart(@RequestParam String username) {
 		return iCartService.showCart(username);
 	}
 
@@ -49,7 +47,7 @@ public class CartController {
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "username", value = "User's name", required = true, dataType = "string", paramType = "query") })
 	@RequestMapping(method = RequestMethod.DELETE)
-	public void emptyCart(@RequestParam(value = "username", required = true) String username) {
+	public void emptyCart(@RequestParam String username) {
 		iCartService.emptyCart(iCartService.findByUser(iUserService.findByUsername(username)));
 	}
 
@@ -70,8 +68,8 @@ public class CartController {
 			@ApiImplicitParam(name = "productId", value = "Product's id number", required = true, dataType = "int", paramType = "query"),
 			@ApiImplicitParam(name = "quantity", value = "Quantity of the product", required = true, dataType = "int", paramType = "query") })
 	@RequestMapping(value = "/cartItem", method = RequestMethod.POST)
-	public void addItemToCart(@RequestParam(value = "productId", required = true) int productId,
-			@RequestParam(value = "quantity", required = true) int quantity, @RequestBody Cart cart) {
+	public void addItemToCart(@RequestParam int productId,
+			@RequestParam int quantity, @RequestBody Cart cart) {
 		iCartService.addItemToCart(iProductService.findById(productId), quantity, cart);
 	}
 
@@ -79,7 +77,7 @@ public class CartController {
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "productId", value = "Product's id number", required = true, dataType = "int", paramType = "query") })
 	@RequestMapping(value = "/cartItem", method = RequestMethod.DELETE)
-	public void removeItemFromCart(@RequestParam(value = "productId", required = true) int productId, @RequestBody Cart cart) {
+	public void removeItemFromCart(@RequestParam int productId, @RequestBody Cart cart) {
 		iCartService.removeItemFromCart(iProductService.findById(productId), cart);
 	}
 
@@ -88,8 +86,8 @@ public class CartController {
 			@ApiImplicitParam(name = "productId", value = "Product's id number", required = true, dataType = "int", paramType = "query"),
 			@ApiImplicitParam(name = "quantity", value = "Quantity of the product", required = true, dataType = "int", paramType = "query") })
 	@RequestMapping(value = "/cartItem", method = RequestMethod.PUT)
-	public void updateQuantity(@RequestParam(value = "productId", required = true) int productId,
-			@RequestParam(value = "quantity", required = true) int quantity, @RequestBody Cart cart) {
+	public void updateQuantity(@RequestParam int productId,
+			@RequestParam int quantity, @RequestBody Cart cart) {
 		iCartService.updateQuantity(iProductService.findById(productId), quantity, cart);
 	}
 

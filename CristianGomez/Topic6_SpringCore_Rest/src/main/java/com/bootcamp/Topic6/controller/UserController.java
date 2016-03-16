@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @Component
 @RequestMapping("/user")
-@ComponentScan("com.bootcamp.Topic6.service")
+@ComponentScan("com.bootcamp.Topic6")
 @Api(value = "User", description = "All operations related to users")
 public class UserController {
 
@@ -48,8 +48,8 @@ public class UserController {
 	@ApiImplicitParams({ @ApiImplicitParam(name = "firstMame", required = true, dataType = "String", paramType = "query"),
 			@ApiImplicitParam(name = "lastName", required = true, dataType = "String", paramType = "query") })
 	@RequestMapping(value = "/search", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<User> findByName(@RequestParam(value = "firstName", required = true) String firstName,
-			@RequestParam(value = "lastName", required = true) String lastName) {
+	public List<User> findByName(@RequestParam String firstName,
+			@RequestParam String lastName) {
 		return iUserService.findByName(firstName, lastName);
 	}
 

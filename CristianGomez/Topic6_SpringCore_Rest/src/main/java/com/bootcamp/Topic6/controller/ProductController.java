@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @Component
 @RequestMapping("/product")
-@ComponentScan("com.bootcamp.Topic6.service")
+@ComponentScan("com.bootcamp.Topic6")
 @Api(value = "Product", description = "All operations related to products")
 public class ProductController {
     
