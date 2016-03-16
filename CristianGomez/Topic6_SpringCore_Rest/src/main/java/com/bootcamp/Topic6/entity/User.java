@@ -15,17 +15,24 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 @Entity
 @Table(name = "user")
 public class User {
+    
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	private String firstName;
+	
 	private String lastName;
+	
 	private String username;
+	
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
+	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	@JsonManagedReference
 	private List<Address> address;
+	
 
 	@JsonProperty(required = true)
 	public String getUsername() {

@@ -16,10 +16,13 @@ public class CartItem {
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "product")
 	private Product product;
+	
 	private int quantity;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "cart")
 	@JsonBackReference

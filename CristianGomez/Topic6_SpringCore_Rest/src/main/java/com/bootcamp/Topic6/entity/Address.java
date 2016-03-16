@@ -15,12 +15,16 @@ public class Address {
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	@ManyToOne
 	@JoinColumn(name = "user")
-	@JsonBackReference
+	@JsonBackReference	
 	private User user;
+	
 	private String street;
+	
 	private String city;
+	
 	private String country;
 
 	public String getStreet() {

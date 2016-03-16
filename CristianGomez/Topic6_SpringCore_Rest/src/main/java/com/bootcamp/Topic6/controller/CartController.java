@@ -26,12 +26,16 @@ import io.swagger.annotations.ApiOperation;
 @ComponentScan("com.bootcamp.Topic6.service")
 @Api(value = "Cart", description = "All operations related to a cart")
 public class CartController {
+    
 	@Autowired
 	private ICartService iCartService;
+	
 	@Autowired
 	private IProductService iProductService;
+	
 	@Autowired
 	private IUserService iUserService;
+	
 
 	@ApiOperation(value = "Show the cart of a given user")
 	@ApiImplicitParams({

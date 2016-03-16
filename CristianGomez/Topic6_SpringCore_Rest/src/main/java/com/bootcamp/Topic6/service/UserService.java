@@ -10,8 +10,10 @@ import com.bootcamp.Topic6.repository.UserRepository;
 
 @Component
 public class UserService implements IUserService {
+    
 	@Autowired
 	UserRepository userRepository;
+	
 	@Autowired
 	ICartService iCartService;
 

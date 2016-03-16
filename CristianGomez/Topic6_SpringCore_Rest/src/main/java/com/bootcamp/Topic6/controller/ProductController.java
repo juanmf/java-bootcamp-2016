@@ -27,8 +27,10 @@ import io.swagger.annotations.ApiOperation;
 @ComponentScan("com.bootcamp.Topic6.service")
 @Api(value = "Product", description = "All operations related to products")
 public class ProductController {
+    
 	@Autowired
 	private IProductService iProductService;
+	
 	@Autowired
 	private ICategoryService iCategoryService;
 

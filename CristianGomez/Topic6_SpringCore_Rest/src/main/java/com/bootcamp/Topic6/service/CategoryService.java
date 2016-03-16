@@ -10,6 +10,7 @@ import com.bootcamp.Topic6.repository.CategoryRepository;
 
 @Component
 public class CategoryService implements ICategoryService {
+    
 	@Autowired
 	private CategoryRepository categoryRepository;
 

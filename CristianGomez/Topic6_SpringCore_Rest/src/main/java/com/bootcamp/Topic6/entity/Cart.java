@@ -18,15 +18,19 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table(name = "cart")
 public class Cart {
+    
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	@OneToOne
 	@JoinColumn(name = "user")
 	private User user;
+	
 	@OneToMany(mappedBy = "cart", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonManagedReference
 	private List<CartItem> cartItem;
+	
 	private double total;
 
 	public User getUser() {

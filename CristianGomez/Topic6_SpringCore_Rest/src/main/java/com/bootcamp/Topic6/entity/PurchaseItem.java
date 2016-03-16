@@ -14,13 +14,17 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity
 @Table(name = "purchase_item")
 public class PurchaseItem {
-	@Id
+	
+    @Id
 	@GeneratedValue
 	private int id;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product")
 	private Product product;
+	
 	private int quantity;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "purchase")
 	@JsonBackReference
