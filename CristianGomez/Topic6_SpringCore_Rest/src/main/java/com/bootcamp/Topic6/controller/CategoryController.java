@@ -3,7 +3,6 @@ package com.bootcamp.Topic6.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,6 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/category")
-@ComponentScan("com.bootcamp.Topic6")
 @Api(value = "Category", description = "All operations related to product's categories")
 public class CategoryController {
 

@@ -1,7 +1,6 @@
 package com.bootcamp.Topic6.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +20,6 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/cart")
-@ComponentScan("com.bootcamp.Topic6")
 @Api(value = "Cart", description = "All operations related to a cart")
 public class CartController {
     

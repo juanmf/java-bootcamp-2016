@@ -2,6 +2,7 @@ package com.bootcamp.Topic6;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Class that runs the Spring Boot application.
@@ -9,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Cadrian
  *
  */
-
+@ComponentScan("com.bootcamp.Topic6")
 @SpringBootApplication
 public class App {
   //http://localhost:8080/swagger-ui.html (api-docs)
