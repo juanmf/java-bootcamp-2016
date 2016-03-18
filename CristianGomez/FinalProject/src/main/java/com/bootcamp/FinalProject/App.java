@@ -10,10 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
  * @author Cadrian
  *
  */
-@ComponentScan("com.bootcamp.Topic6")
+@ComponentScan("com.bootcamp.FinalProject")
 @SpringBootApplication
 public class App {
-  //http://localhost:8080/swagger-ui.html (api-docs)
+  //http://localhost:8080/swagger-ui.html (api-info)
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 	}
