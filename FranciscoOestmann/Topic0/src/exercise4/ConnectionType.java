@@ -1,27 +1,75 @@
-package exercise4corregido;
+package exercise4;
 
-public class ConnectionType implements ConnectionBuilder {
+public class ConnectionType {
+
+	private String connectionType;
+	private String connectionUrl;
+	private String driver;
 	
-	private SqlConnection conn;
+	public ConnectionType(ConnectionBuilder builder) {
+		
+		this.connectionType = builder.connectionType;
+		this.connectionUrl = builder.connectionUrl;
+		this.driver = builder.driver;
+	}
 	
 	
 
-	public ConnectionType() {
-		conn = new SqlConnection();
+	
+	
+
+
+@Override
+	public String toString() {
+		return "ConnectionType [connectionType=" + connectionType + ", connectionUrl=" + connectionUrl + ", driver=" + driver + "]";
 	}
 
-	@Override
-	public void buildConnection() {
-		
-		conn.setDriver("con.mysql.jdbc.Driver");
-		conn.setUrl("jdbc:mysql://localhost:3306/database");
-		conn.setQuery("SELECT * from table where table.id=1");
+
+
+
+
+
+
+public static class ConnectionBuilder{
+	
+	private String connectionType;
+	private String connectionUrl;
+	private String driver;
+	
+	
+	public ConnectionBuilder() {
 		
 	}
 
-	@Override
-	public SqlConnection getConnection() {
+
+	public ConnectionBuilder setConnectionType(String connectionType) {
+		this.connectionType = connectionType;
+		
+		return this;
+	}
+	
+	
+	public ConnectionBuilder setConnectionUrl(String connectionUrl) {
+		this.connectionUrl = connectionUrl;
+		
+		return this;
+	}
+	
+	
+	public ConnectionBuilder setDriver(String driver) {
+		this.driver = driver;
+		
+		return this;
+	}
+
+
+	public ConnectionType buildConnecttion(){
+		ConnectionType conn = new ConnectionType(this);
 		return conn;
 	}
+	
+}
+
+
 
 }

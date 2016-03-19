@@ -1,5 +1,11 @@
 package exercise2;
 
-public interface RemoteSqlConnection {
-	void connect();
+public class RemoteSqlConnection implements SqlConnection {
+
+	@Override
+	public void createConnection() {
+		System.out.println("Remote  SQL connection stablished.");
+
+	}
+
 }

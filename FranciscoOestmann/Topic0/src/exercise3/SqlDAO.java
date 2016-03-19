@@ -2,7 +2,7 @@ package exercise3;
 
 import java.sql.*;
 
-public class SqlDAO implements SelectorDAOImpl{
+public class SqlDAO implements ConnectionDAO{
 	
 	Connection conn = null;
 	private int id;
