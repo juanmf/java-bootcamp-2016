@@ -1,21 +1,31 @@
-package shopping.cart.test;
+package cart;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
-import java.util.LinkedList;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
-import shopping.cart.main.Item;
-import shopping.cart.main.ShoppingCart;
+import cart.Item;
+import cart.ShoppingCart;
 
 public class ShoppingCartServiceImplTest {
 
-	ShoppingCart myCart = new ShoppingCart();
-	LinkedList<Object> list = new LinkedList<Object>();
-	Item item = new Item("Video Cammera", 249.99);
-	Item item2 = new Item("Photo Cammera", 149.99);
+	ShoppingCart myCart;
+	Item item;
+	Item item2;
 	
+	
+	@Before
+	public void setup(){
+		myCart = new ShoppingCart();
+		item = new Item("Video Cammera", 249.99);
+		item2 = new Item("Photo Cammera", 149.99);
+	}
 	
 	/**
 	 * Test if when the Client adds an item to his cart, it's really added 
@@ -33,12 +43,13 @@ public class ShoppingCartServiceImplTest {
 	 */
 	@Test
 	public void testIfItemWasRemoveFromCart(){
+		myCart.AddItemToCart(item);
 		myCart.removeItemFromCart(item);
 		assertFalse(myCart.getCartList().contains(item));
 	}
 	
 	/**
-	 * Test to see if the return value of the method is the correct value
+	 * Test to verify if the return value of the method is the correct value
 	 * 
 	 */
 	@Test
@@ -53,6 +64,13 @@ public class ShoppingCartServiceImplTest {
 	@Test
 	public void testIfListNotNull(){
 		assertNotNull(myCart.getCartList());
+	}
+	
+	@After
+	public void teardown(){
+		myCart = null;
+		item =  null;
+		item2 =  null;
 	}
 
 }

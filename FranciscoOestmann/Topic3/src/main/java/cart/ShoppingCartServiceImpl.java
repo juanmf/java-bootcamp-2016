@@ -1,4 +1,4 @@
-package shopping.cart.main;
+package cart;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -16,7 +16,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 	
 	
 	//Behavior
-	
 	/**
 	 * The Method takes an element and add it to the ShopingCart list
 	 * 
@@ -71,7 +70,5 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 	public LinkedList<Item> getCartList(){
 		return list;
 	}
-	
-
 
 }

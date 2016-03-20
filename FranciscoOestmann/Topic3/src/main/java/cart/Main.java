@@ -1,4 +1,4 @@
-package shopping.cart.main;
+package cart;
 
 public class Main {
 
