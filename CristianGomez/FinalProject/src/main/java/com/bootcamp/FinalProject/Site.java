@@ -1,5 +1,6 @@
 package com.bootcamp.FinalProject;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,8 +9,7 @@ import org.springframework.stereotype.Component;
 import com.bootcamp.FinalProject.entity.User;
 
 /**
- * Class that keeps in memory the list of logged in users. Implemented using the
- * Singleton design pattern.
+ * Class that keeps in memory the list of logged in users.
  * 
  * @author Cadrian
  *
@@ -19,17 +19,19 @@ import com.bootcamp.FinalProject.entity.User;
 public class Site {
 
     private static List<User> loggedUsers;
-    private static Site instance;
+   
 
-    public static Site getInstance() {
-        if (instance == null) {
-            instance = new Site();
-            loggedUsers = new LinkedList<User>();
-        }
-        return instance;
+    /**
+     * inicializacion de statics, thread safe.
+     */
+    static {
+        loggedUsers =  Collections.synchronizedList(new LinkedList<User>());
     }
 
-    public List<User> getLoggedUsers() {
+    private Site(){}
+
+    
+    public static List<User> getLoggedUsers() {
         return loggedUsers;
     }
-}
+    }

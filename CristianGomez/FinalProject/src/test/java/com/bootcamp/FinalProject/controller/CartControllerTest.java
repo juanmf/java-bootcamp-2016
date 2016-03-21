@@ -151,7 +151,7 @@ public class CartControllerTest {
 
     @Test
     public void createAndDeleteCartWithUserLoggedIn() {
-        assertFalse(Site.getInstance().getLoggedUsers().isEmpty());
+        assertFalse(Site.getLoggedUsers().isEmpty());
         assertNotNull(cart);
         assertEquals(user.getUsername(), cart.getUser().getUsername());
     }

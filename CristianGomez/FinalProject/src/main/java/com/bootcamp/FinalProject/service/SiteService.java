@@ -26,7 +26,7 @@ public class SiteService implements ISiteService {
     public boolean login(User user) {
         User temp = userService.findByUsername(user.getUsername());
         if (temp.getPassword().compareTo(user.getPassword()) == 0) {
-            Site.getInstance().getLoggedUsers().add(temp);
+            Site.getLoggedUsers().add(temp);
             if (cartService.findByUser(temp) == null) {
                 Cart cart = cartService.findByUser(null);
                 if (cart == null) {
@@ -45,11 +45,11 @@ public class SiteService implements ISiteService {
     }
 
     public boolean logout(User user) {
-        Iterator<User> it = Site.getInstance().getLoggedUsers().iterator();
+        Iterator<User> it = Site.getLoggedUsers().iterator();
         while (it.hasNext()) {
             User temp = it.next();
             if (temp.equals(user)) {
-                Site.getInstance().getLoggedUsers().remove(temp);
+                Site.getLoggedUsers().remove(temp);
                 return true;
             }
         }
