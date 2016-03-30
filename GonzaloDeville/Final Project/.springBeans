@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.7.3.201602250914-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+	</configs>
+	<autoconfigs>
+		<config>java:com.carrito.CarritoDeComprasApplication</config>
+		<config>java:com.carrito.controllers.CategoryController</config>
+		<config>java:com.carrito.controllers.UserController</config>
+		<config>java:com.carrito.controllers.ProductController</config>
+		<config>java:com.carrito.controllers.CartController</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
